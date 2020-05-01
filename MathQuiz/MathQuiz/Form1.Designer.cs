@@ -96,7 +96,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(121, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 40);
@@ -189,7 +189,7 @@
             this.timesLeftLabel.TabIndex = 7;
             this.timesLeftLabel.Text = "?";
             this.timesLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.timesLeftLabel.Click += new System.EventHandler(this.timesLeftLabel_Click);
+            //this.timesLeftLabel.Click += new System.EventHandler(this.timesLeftLabel_Click);
             // 
             // product
             // 

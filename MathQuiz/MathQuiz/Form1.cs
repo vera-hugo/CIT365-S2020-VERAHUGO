@@ -48,6 +48,9 @@ namespace MathQuiz
         /// Start the quiz by filling in all of the problems
         /// and starting the timer.
         /// </summary>
+        /// 
+
+        
         public void StartTheQuiz()
         {
             // Fill in the addition problem.
@@ -144,7 +147,8 @@ namespace MathQuiz
             
             currentTime.Text = DateTime.Now.ToString("d MMMM yyyy");
 
-            if (CheckTheAnswer())
+            if ( CheckTheAnswer() )
+                
             {
                 // If CheckTheAnswer() returns true, then the user 
                 // got the answer right. Stop the timer  
@@ -164,12 +168,7 @@ namespace MathQuiz
                 
             }
 
-             /*if (timeLeft == 1){
-                timeLabel.BackColor = Color.Transparent;
-                //timeLeft = timeLeft - 1;
-                timeLabel.Text = timeLeft + " seconds";
-
-            }*/
+            
 
             else if (timeLeft > 0)
             {
@@ -199,14 +198,22 @@ namespace MathQuiz
         private bool CheckTheAnswer()
         {
             if ((addend1 + addend2 == sum.Value)
-                &&(minuend-subtrahend == difference.Value)
-                &&(multiplicand*multiplier == product.Value)
-                &&(dividend/divisor == quotient.Value))
+                && (minuend - subtrahend == difference.Value)
+                && (multiplicand * multiplier == product.Value)
+                && (dividend / divisor == quotient.Value))
+            { 
+                     
+                                
                 return true;
+            }
             else
+            {
                 return false;
+                
+            }
         }
 
+        
         private void answer_Enter(object sender, EventArgs e)
         {
             // Select the whole answer in the NumericUpDown control.
@@ -219,10 +226,7 @@ namespace MathQuiz
             }
         }
 
-        private void timesLeftLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
 }
