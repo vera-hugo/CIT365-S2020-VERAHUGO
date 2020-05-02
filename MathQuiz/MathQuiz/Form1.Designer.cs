@@ -84,7 +84,8 @@
             // 
             // plusLeftLabel
             // 
-            this.plusLeftLabel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.plusLeftLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.plusLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plusLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plusLeftLabel.Location = new System.Drawing.Point(48, 73);
             this.plusLeftLabel.Name = "plusLeftLabel";
@@ -95,7 +96,8 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(121, 73);
             this.label2.Name = "label2";
@@ -106,7 +108,8 @@
             // 
             // plusRightLabel
             // 
-            this.plusRightLabel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.plusRightLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.plusRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plusRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plusRightLabel.Location = new System.Drawing.Point(194, 73);
             this.plusRightLabel.Name = "plusRightLabel";
@@ -117,7 +120,8 @@
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(267, 73);
             this.label4.Name = "label4";
@@ -128,27 +132,30 @@
             // 
             // sum
             // 
-            this.sum.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.sum.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sum.Location = new System.Drawing.Point(342, 77);
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 35);
             this.sum.TabIndex = 2;
+            this.sum.ValueChanged += new System.EventHandler(this.sum_ValueChanged);
             this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
-            this.difference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.difference.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.difference.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.difference.Location = new System.Drawing.Point(342, 125);
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(100, 35);
             this.difference.TabIndex = 3;
+            this.difference.ValueChanged += new System.EventHandler(this.difference_ValueChanged);
             this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(267, 175);
             this.label3.Name = "label3";
@@ -159,7 +166,8 @@
             // 
             // timesRightLabel
             // 
-            this.timesRightLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.timesRightLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.timesRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timesRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timesRightLabel.Location = new System.Drawing.Point(194, 175);
             this.timesRightLabel.Name = "timesRightLabel";
@@ -170,7 +178,8 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(121, 175);
             this.label6.Name = "label6";
@@ -181,7 +190,8 @@
             // 
             // timesLeftLabel
             // 
-            this.timesLeftLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.timesLeftLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.timesLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timesLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timesLeftLabel.Location = new System.Drawing.Point(48, 175);
             this.timesLeftLabel.Name = "timesLeftLabel";
@@ -189,21 +199,22 @@
             this.timesLeftLabel.TabIndex = 7;
             this.timesLeftLabel.Text = "?";
             this.timesLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.timesLeftLabel.Click += new System.EventHandler(this.timesLeftLabel_Click);
             // 
             // product
             // 
-            this.product.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.product.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product.Location = new System.Drawing.Point(342, 175);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(100, 35);
             this.product.TabIndex = 4;
+            this.product.ValueChanged += new System.EventHandler(this.product_ValueChanged);
             this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(267, 123);
             this.label8.Name = "label8";
@@ -214,7 +225,8 @@
             // 
             // minusRightLabel
             // 
-            this.minusRightLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.minusRightLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.minusRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.minusRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minusRightLabel.Location = new System.Drawing.Point(194, 123);
             this.minusRightLabel.Name = "minusRightLabel";
@@ -225,7 +237,8 @@
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(121, 125);
             this.label10.Name = "label10";
@@ -236,7 +249,8 @@
             // 
             // minusLeftLabel
             // 
-            this.minusLeftLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.minusLeftLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.minusLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.minusLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minusLeftLabel.Location = new System.Drawing.Point(48, 125);
             this.minusLeftLabel.Name = "minusLeftLabel";
@@ -247,17 +261,19 @@
             // 
             // quotient
             // 
-            this.quotient.BackColor = System.Drawing.Color.Silver;
+            this.quotient.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.quotient.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quotient.Location = new System.Drawing.Point(342, 228);
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(100, 35);
             this.quotient.TabIndex = 5;
+            this.quotient.ValueChanged += new System.EventHandler(this.quotient_ValueChanged);
             this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.Color.Silver;
+            this.label12.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(267, 227);
             this.label12.Name = "label12";
@@ -268,7 +284,8 @@
             // 
             // dividedRightLabel
             // 
-            this.dividedRightLabel.BackColor = System.Drawing.Color.Silver;
+            this.dividedRightLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dividedRightLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dividedRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dividedRightLabel.Location = new System.Drawing.Point(194, 227);
             this.dividedRightLabel.Name = "dividedRightLabel";
@@ -279,7 +296,8 @@
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.Color.Silver;
+            this.label14.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(121, 228);
             this.label14.Name = "label14";
@@ -290,7 +308,8 @@
             // 
             // dividedLeftLabel
             // 
-            this.dividedLeftLabel.BackColor = System.Drawing.Color.Silver;
+            this.dividedLeftLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dividedLeftLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dividedLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dividedLeftLabel.Location = new System.Drawing.Point(48, 228);
             this.dividedLeftLabel.Name = "dividedLeftLabel";
@@ -306,7 +325,7 @@
             this.startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.Black;
-            this.startButton.Location = new System.Drawing.Point(182, 280);
+            this.startButton.Location = new System.Drawing.Point(178, 278);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(131, 50);
             this.startButton.TabIndex = 1;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,8 +50,8 @@ namespace MathQuiz
         /// and starting the timer.
         /// </summary>
         /// 
-
         
+
         public void StartTheQuiz()
         {
             // Fill in the addition problem.
@@ -59,7 +60,7 @@ namespace MathQuiz
             addend1 = randomizer.Next(51);
             addend2 = randomizer.Next(51);
 
-           
+
             // Convert the two randomly generated numbers
             // into strings so that they can be displayed
             // in the label controls.
@@ -127,28 +128,32 @@ namespace MathQuiz
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
             timer1.Start();
-        
+
         }
 
-
+        //This lunch the Form of the application
         public Form1()
         {
             InitializeComponent();
-        }               
 
+            //This shos the date once the form is started
+            currentTime.Text = DateTime.Now.ToString("d MMMM yyyy");
+        }
+
+
+        //his start the Quiz problems of the application
         private void startButton_Click_1(object sender, EventArgs e)
         {
             StartTheQuiz();
             startButton.Enabled = false;
         }
 
+        //This is the times of the application and it is showed in the timeLabel 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            currentTime.Text = DateTime.Now.ToString("d MMMM yyyy");
 
-            if ( CheckTheAnswer() )
-                
+            if (CheckTheAnswer())
+
             {
                 // If CheckTheAnswer() returns true, then the user 
                 // got the answer right. Stop the timer  
@@ -157,18 +162,43 @@ namespace MathQuiz
                 MessageBox.Show("You got all the answers right!",
                                 "Congratulations!");
                 startButton.Enabled = true;
+
+                //Once that we click on hte message box, all the boxes change to color to white
+                plusLeftLabel.BackColor = Color.White;
+                label2.BackColor = Color.White;
+                plusRightLabel.BackColor = Color.White;
+                label4.BackColor = Color.White;
+                sum.BackColor = Color.White;
+                minusLeftLabel.BackColor = Color.White;
+                label10.BackColor = Color.White;
+                minusRightLabel.BackColor = Color.White;
+                label8.BackColor = Color.White;
+                difference.BackColor = Color.White;
+                timesLeftLabel.BackColor = Color.White;
+                label6.BackColor = Color.White;
+                timesRightLabel.BackColor = Color.White;
+                label3.BackColor = Color.White;
+                product.BackColor = Color.White;
+                dividedLeftLabel.BackColor = Color.White;
+                label14.BackColor = Color.White;
+                dividedRightLabel.BackColor = Color.White;
+                label12.BackColor = Color.White;
+                quotient.BackColor = Color.White;
+                StartTheQuiz();
+
             }
 
+            //It there is only five seconds left, the timeLabel change its color to red
             if (timeLeft == 6)
             {
                 timeLabel.BackColor = Color.Red;
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + " seconds";
 
-                
+
             }
 
-            
+
 
             else if (timeLeft > 0)
             {
@@ -188,35 +218,62 @@ namespace MathQuiz
                 timeLabel.Text = "Time's up!";
                 MessageBox.Show("You didn't finish in time.", "Sorry!");
                 sum.Value = addend1 + addend2;
+
+                //Once that we click on hte message box, all the boxes change to color to white
                 difference.Value = minuend - subtrahend;
                 product.Value = multiplicand * multiplier;
                 quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
+                plusLeftLabel.BackColor = Color.White;
+                label2.BackColor = Color.White;
+                plusRightLabel.BackColor = Color.White;
+                label4.BackColor = Color.White;
+                sum.BackColor = Color.White;
+                minusLeftLabel.BackColor = Color.White;
+                label10.BackColor = Color.White;
+                minusRightLabel.BackColor = Color.White;
+                label8.BackColor = Color.White;
+                difference.BackColor = Color.White;
+                timesLeftLabel.BackColor = Color.White;
+                label6.BackColor = Color.White;
+                timesRightLabel.BackColor = Color.White;
+                label3.BackColor = Color.White;
+                product.BackColor = Color.White;
+                dividedLeftLabel.BackColor = Color.White;
+                label14.BackColor = Color.White;
+                dividedRightLabel.BackColor = Color.White;
+                label12.BackColor = Color.White;
+                quotient.BackColor = Color.White;
+                StartTheQuiz();
+
             }
         }
 
+        //This check if all the answers are correct or wrong
         private bool CheckTheAnswer()
         {
             if ((addend1 + addend2 == sum.Value)
                 && (minuend - subtrahend == difference.Value)
                 && (multiplicand * multiplier == product.Value)
                 && (dividend / divisor == quotient.Value))
-            { 
-                     
-                                
+            {
+                                       
                 return true;
             }
             else
             {
                 return false;
-                
+
             }
         }
 
-        
+
+        //
         private void answer_Enter(object sender, EventArgs e)
         {
-            // Select the whole answer in the NumericUpDown control.
+            // Select the whole This code will select and clear the current value in each 
+            //NumericUpDown control as soon as the quiz taker chooses it and starts to enter a 
+            //different value in the NumericUpDown control.
             NumericUpDown answerBox = sender as NumericUpDown;
 
             if (answerBox != null)
@@ -226,7 +283,81 @@ namespace MathQuiz
             }
         }
 
-       
-    }
 
+        //This part use the Console.Beep(); to make the computer play a beep sound when the answer is right
+        private void sum_ValueChanged(object sender, EventArgs e)
+        {
+            if (sum.Value == addend1 + addend2)
+            {
+                Console.Beep();
+                plusLeftLabel.BackColor = Color.Green;
+                label2.BackColor = Color.Green;
+                plusRightLabel.BackColor = Color.Green;
+                label4.BackColor = Color.Green;
+                sum.BackColor = Color.Green;           
+
+            }
+            else
+            {
+                
+            }
+        }
+
+        //This part use the Console.Beep(); to make the computer play a beep sound when the answer is right
+        private void difference_ValueChanged(object sender, EventArgs e)
+        {
+            if (difference.Value == minuend - subtrahend)
+            {
+                Console.Beep();
+                minusLeftLabel.BackColor = Color.Green;
+                label10.BackColor = Color.Green;
+                minusRightLabel.BackColor = Color.Green;
+                label8.BackColor = Color.Green;
+                difference.BackColor = Color.Green;
+            }
+            else
+            {
+
+            }
+
+        }
+
+        //This part use the Console.Beep(); to make the computer play a beep sound when the answer is right
+        private void product_ValueChanged(object sender, EventArgs e)
+        {
+            if (product.Value == multiplicand * multiplier)
+            {
+                Console.Beep();
+                timesLeftLabel.BackColor = Color.Green;
+                label6.BackColor = Color.Green;
+                timesRightLabel.BackColor = Color.Green;
+                label3.BackColor = Color.Green;
+                product.BackColor = Color.Green;
+            }
+            else
+            {
+
+            }
+        }
+
+        //This part use the Console.Beep(); to make the computer play a beep sound when the answer is right
+        private void quotient_ValueChanged(object sender, EventArgs e)
+        {
+            if (quotient.Value == dividend / divisor)
+            {
+                Console.Beep();
+                dividedLeftLabel.BackColor = Color.Green;
+                label14.BackColor = Color.Green;
+                dividedRightLabel.BackColor = Color.Green;
+                label12.BackColor = Color.Green;
+                quotient.BackColor = Color.Green;
+
+            }
+            else
+            {
+
+            }
+        }
+    }
 }
+
