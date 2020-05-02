@@ -184,7 +184,7 @@ namespace MathQuiz
                 dividedRightLabel.BackColor = Color.White;
                 label12.BackColor = Color.White;
                 quotient.BackColor = Color.White;
-                StartTheQuiz();
+                //StartTheQuiz();
 
             }
 
@@ -244,7 +244,7 @@ namespace MathQuiz
                 dividedRightLabel.BackColor = Color.White;
                 label12.BackColor = Color.White;
                 quotient.BackColor = Color.White;
-                StartTheQuiz();
+                ///StartTheQuiz();
 
             }
         }
