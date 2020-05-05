@@ -19,22 +19,34 @@ namespace MegaDesk_Vera
 
         private void addNewQuoteButtom_Click(object sender, EventArgs e)
         {
+            Form AddNewQuoteForm = new AddQuote();
+            AddNewQuoteForm.Show();
+            Hide();
+
 
         }
 
         private void viewQuotesButtom_Click(object sender, EventArgs e)
         {
+            Form ViewQuotesForm = new ViewAllQuotes();
+            ViewQuotesForm.Show();
+            Hide();
 
         }
 
         private void searchQuotesButtom_Click(object sender, EventArgs e)
         {
+            Form SearchQuotesForm = new SearchQuotes();
+            SearchQuotesForm.Show();
+            Hide();
 
         }
 
         private void exitButtom_Click(object sender, EventArgs e)
         {
-
+            //Close the Main Menu Form
+            Close();
+           
         }
     }
 }

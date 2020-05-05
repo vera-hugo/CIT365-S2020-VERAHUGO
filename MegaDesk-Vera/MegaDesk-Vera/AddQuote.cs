@@ -16,5 +16,14 @@ namespace MegaDesk_Vera
         {
             InitializeComponent();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Form MainMenuForm = new MainMenu();
+            MainMenuForm.Show();
+            Hide();
+        }
+
+        
     }
 }

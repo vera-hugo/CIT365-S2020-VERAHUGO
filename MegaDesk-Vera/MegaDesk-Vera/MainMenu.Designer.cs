@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.addNewQuoteButtom = new System.Windows.Forms.Button();
             this.viewQuotesButtom = new System.Windows.Forms.Button();
             this.searchQuotesButtom = new System.Windows.Forms.Button();
             this.exitButtom = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // addNewQuoteButtom
             // 
             this.addNewQuoteButtom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewQuoteButtom.Location = new System.Drawing.Point(85, 41);
+            this.addNewQuoteButtom.Location = new System.Drawing.Point(45, 41);
             this.addNewQuoteButtom.Name = "addNewQuoteButtom";
             this.addNewQuoteButtom.Size = new System.Drawing.Size(183, 63);
             this.addNewQuoteButtom.TabIndex = 0;
@@ -48,7 +51,7 @@
             // viewQuotesButtom
             // 
             this.viewQuotesButtom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewQuotesButtom.Location = new System.Drawing.Point(85, 110);
+            this.viewQuotesButtom.Location = new System.Drawing.Point(45, 110);
             this.viewQuotesButtom.Name = "viewQuotesButtom";
             this.viewQuotesButtom.Size = new System.Drawing.Size(183, 63);
             this.viewQuotesButtom.TabIndex = 1;
@@ -59,7 +62,7 @@
             // searchQuotesButtom
             // 
             this.searchQuotesButtom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchQuotesButtom.Location = new System.Drawing.Point(85, 179);
+            this.searchQuotesButtom.Location = new System.Drawing.Point(45, 179);
             this.searchQuotesButtom.Name = "searchQuotesButtom";
             this.searchQuotesButtom.Size = new System.Drawing.Size(183, 63);
             this.searchQuotesButtom.TabIndex = 2;
@@ -70,7 +73,7 @@
             // exitButtom
             // 
             this.exitButtom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButtom.Location = new System.Drawing.Point(85, 248);
+            this.exitButtom.Location = new System.Drawing.Point(45, 248);
             this.exitButtom.Name = "exitButtom";
             this.exitButtom.Size = new System.Drawing.Size(183, 63);
             this.exitButtom.TabIndex = 3;
@@ -78,17 +81,30 @@
             this.exitButtom.UseVisualStyleBackColor = true;
             this.exitButtom.Click += new System.EventHandler(this.exitButtom_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(230, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(351, 221);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitButtom);
             this.Controls.Add(this.searchQuotesButtom);
             this.Controls.Add(this.viewQuotesButtom);
             this.Controls.Add(this.addNewQuoteButtom);
             this.Name = "MainMenu";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,6 +115,7 @@
         private System.Windows.Forms.Button viewQuotesButtom;
         private System.Windows.Forms.Button searchQuotesButtom;
         private System.Windows.Forms.Button exitButtom;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
