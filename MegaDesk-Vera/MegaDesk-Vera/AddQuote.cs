@@ -14,12 +14,16 @@ namespace MegaDesk_Vera
     {
         public int minWidth = 24;
         public int maxWidth = 96;
-        public int minDepth = 12;
-        public int maxDepth = 48;
+        //public int minDepth = 12;
+        //public int maxDepth = 48;
+
+
+
 
         public AddQuote()
         {
             InitializeComponent();
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -44,9 +48,10 @@ namespace MegaDesk_Vera
 
         }
 
+       
         private void TextBox2_Validating(object sender, CancelEventArgs e)
         {
-
+            
             bool result = checkWidth();
             string errorMessage = "Width does not belong to the correct range (24-96)";
 
@@ -57,5 +62,30 @@ namespace MegaDesk_Vera
                 System.Windows.Forms.MessageBox.Show(errorMessage);
             }
         }
+
+      
+        private void TextBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int input = 0;
+            // while (!(e.KeyChar == 13))
+            //{
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == 13)))
+            {
+                MessageBox.Show("please enter digits only");
+                e.Handled = false;
+            }
+            else
+            {
+                int.TryParse(textBox6.Text, out input);
+            }
+            // }
+            if (!(input >= 12 && input <= 48))
+            {
+                MessageBox.Show("Please enter numbers between 12 and 48");
+            }
+            
+        }
     }
+
+    
 }
