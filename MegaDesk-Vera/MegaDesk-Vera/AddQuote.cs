@@ -12,13 +12,10 @@ namespace MegaDesk_Vera
 {
     public partial class AddQuote : Form
     {
-        public int minWidth = 24;
-        public int maxWidth = 96;
-        //public int minDepth = 12;
-        //public int maxDepth = 48;
+        Desk myDesk = new Desk();
 
-
-
+        public static string userName;
+          
 
         public AddQuote()
         {
@@ -37,7 +34,9 @@ namespace MegaDesk_Vera
         {
             int width = Convert.ToInt32(this.textBox2.Text);
 
-            if (width < minWidth || width > maxWidth)
+            //int test = myDesk.
+
+            if (width < myDesk.getMINWIDTH() || width > myDesk.getMAXWIDTH())
             {
                 return false;
             }
@@ -48,7 +47,22 @@ namespace MegaDesk_Vera
 
         }
 
-       
+        public bool checkDepth()
+        {
+            int width = Convert.ToInt32(this.textBox6.Text);
+
+            if (width < myDesk.getMINDEPTH() || width > myDesk.getMAXDEPTH())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+
         private void TextBox2_Validating(object sender, CancelEventArgs e)
         {
             
@@ -66,24 +80,39 @@ namespace MegaDesk_Vera
       
         private void TextBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int input = 0;
-            // while (!(e.KeyChar == 13))
-            //{
+            
+            
             if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == 13)))
             {
                 MessageBox.Show("please enter digits only");
                 e.Handled = false;
             }
-            else
+           
+                        
+        }
+
+       private void TextBox6_Validating(object sender, CancelEventArgs e)
+        {
+
+            bool result = checkDepth();
+            string errorMessage = "Width does not belong to the correct range (12-48)";
+
+            if (!result)
             {
-                int.TryParse(textBox6.Text, out input);
+                e.Cancel = true;
+                textBox6.Select(0, textBox6.Text.Length);
+                System.Windows.Forms.MessageBox.Show(errorMessage);
             }
-            // }
-            if (!(input >= 12 && input <= 48))
-            {
-                MessageBox.Show("Please enter numbers between 12 and 48");
-            }
-            
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            userName = textBox1.Text;
+            Form DisplayQuoteForm = new DisplayQuote();
+            DisplayQuoteForm.Show();
+            Hide();
+
         }
     }
 
