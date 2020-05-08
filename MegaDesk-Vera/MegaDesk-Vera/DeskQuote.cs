@@ -25,7 +25,7 @@ namespace MegaDesk_Vera
 
 
 
-        public DeskQuote(Desk myDesk, int dayRush, string customerName, string date)
+        public DeskQuote(Desk myDesk, int dayRush, string customerName, DateTime date)
         {
             
             this.myDesk = myDesk;
@@ -65,12 +65,12 @@ namespace MegaDesk_Vera
             return this.customerName;
         }
 
-        private void setdate(string date)
+        private void setdate(DateTime date)
         {
             this.date = date;
         }
 
-        public string getdate()
+        public DateTime getdate()
         {
             return this.date;
         }

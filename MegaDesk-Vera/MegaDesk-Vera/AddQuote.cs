@@ -13,11 +13,11 @@ namespace MegaDesk_Vera
     
     public partial class AddQuote : Form
     {
-         public static Desk myDesk = new Desk();
+        public static Desk myDesk = new Desk();
         //public  Desk myDeskone = new Desk();
-
-        public static string userName;
         public static int dayRush;
+        public static string userName;
+        
 
 
         public AddQuote()
@@ -112,7 +112,7 @@ namespace MegaDesk_Vera
         private void button1_Click_1(object sender, EventArgs e)
         {
             userName = textBox1.Text;
-            dayRush = Convert.ToInt32(comboBox3.Text);
+            //dayRush = Convert.ToInt32(comboBox3.Text);
             myDesk.setwidthDesk(Convert.ToInt32(textBox2.Text));
             myDesk.setdepthDesk(Convert.ToInt32(textBox6.Text));
             myDesk.setdrawersDesk(Convert.ToInt32(comboBox1.Text));
