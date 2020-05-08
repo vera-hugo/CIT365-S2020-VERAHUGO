@@ -13,7 +13,7 @@ namespace MegaDesk_Vera
         private int drawersDesk;
         private string surfaceMaterial;*/
         public Desk myDesk = new Desk();
-        public int age;
+        
 
         
         
@@ -21,10 +21,13 @@ namespace MegaDesk_Vera
         // rush days, customer name, and quote date
         private int dayRush;
         private string customerName;
-        private string date;
+        private DateTime date;
+
+
 
         public DeskQuote(Desk myDesk, int dayRush, string customerName, string date)
         {
+            
             this.myDesk = myDesk;
             this.dayRush = dayRush;
             this.customerName = customerName;
@@ -72,7 +75,7 @@ namespace MegaDesk_Vera
             return this.date;
         }
 
-        //int baseDeskPrice = 200;
+       
 
         
         

@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace MegaDesk_Vera
 {
     public partial class DisplayQuote : Form
-    {   
-
+    {
+        DeskQuote myDeskQuote = new DeskQuote(AddQuote.myDesk, AddQuote.dayRush, AddQuote.userName, DateTime.Now.ToString("d MMMM yyyy"));
 
         public DisplayQuote()
         {
@@ -24,7 +24,9 @@ namespace MegaDesk_Vera
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
             label2.Text = AddQuote.userName;
-            
+            //int widthDesk = AddQuote.myDesk.getwidthDesk();
+            label6.Text = Convert.ToString(AddQuote.myDesk.getwidthDesk() * AddQuote.myDesk.getdepthDesk());
+
 
         }
 
