@@ -8,24 +8,25 @@ using System.Windows.Forms;
 
 namespace MegaDesk_Vera
 {
-    class Desk
+    public class Desk
     {
         
         //bject with width, depth, number of drawers, and the surface material
-        private int widthDesk;
-        private int depthDesk;
-        private int drawersDesk;
-        private string surfaceMaterial;
+        public  int widthDesk;
+        public  int depthDesk;
+        public  int drawersDesk;
+        public  string surfaceMaterial;
 
-        private  int MINWIDTH = 24;
-        private  int MAXWIDTH = 96;
-        private  int MINDEPTH = 12;
-        private  int MAXDEPTH = 48;
+        public  int MINWIDTH = 24;
+        public  int MAXWIDTH = 96;
+        public  int MINDEPTH = 12;
+        public  int MAXDEPTH = 48;
 
         //public const int constanTest = 1000;
 
         public Desk()
         {
+
         }
 
         public Desk(int widthDesk, int depthDesk, int drawersDesk, string surfaceMaterial) 
@@ -37,7 +38,7 @@ namespace MegaDesk_Vera
         
         }
 
-        private void setwidthDesk(int witdhDesk) 
+        public void setwidthDesk(int witdhDesk) 
         {
             this.widthDesk = witdhDesk;
         }
@@ -47,7 +48,7 @@ namespace MegaDesk_Vera
             return this.widthDesk;
         }
 
-        private void setdepthDesk(int depthDesk)
+        public void setdepthDesk(int depthDesk)
         {
             this.depthDesk = depthDesk;
         }
@@ -57,7 +58,7 @@ namespace MegaDesk_Vera
         }
 
 
-        private void setdrawersDesk(int drawersDesk)
+        public void setdrawersDesk(int drawersDesk)
         {
             this.drawersDesk = drawersDesk;
         }
@@ -67,7 +68,7 @@ namespace MegaDesk_Vera
                 return this.drawersDesk;
         }
 
-        private void setsurfaceMaterial(string surfaceMaterial)
+        public void setsurfaceMaterial(string surfaceMaterial)
         {
             this.surfaceMaterial = surfaceMaterial;
         }

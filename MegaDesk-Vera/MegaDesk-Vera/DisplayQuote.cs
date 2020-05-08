@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace MegaDesk_Vera
 {
     public partial class DisplayQuote : Form
-    {
+    {   
+
 
         public DisplayQuote()
         {
@@ -23,6 +24,7 @@ namespace MegaDesk_Vera
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
             label2.Text = AddQuote.userName;
+            
 
         }
 

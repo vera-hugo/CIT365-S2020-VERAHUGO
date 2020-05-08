@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_Vera
 {
-    class DeskQuote : Desk
+    class DeskQuote
     {
         /*private int widthDesk;
         private int depthDesk;
         private int drawersDesk;
         private string surfaceMaterial;*/
         public Desk myDesk = new Desk();
+        public int age;
 
         
         
