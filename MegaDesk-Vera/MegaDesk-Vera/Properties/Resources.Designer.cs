@@ -63,6 +63,16 @@ namespace MegaDesk_Vera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap desktrans {
+            get {
+                object obj = ResourceManager.GetObject("desktrans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Escritorios_de_madera_01 {
             get {
                 object obj = ResourceManager.GetObject("Escritorios_de_madera_01", resourceCulture);

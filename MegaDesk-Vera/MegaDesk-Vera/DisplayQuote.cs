@@ -53,6 +53,6 @@ namespace MegaDesk_Vera
             Hide();
         }
 
-     
+        
     }   
 }
