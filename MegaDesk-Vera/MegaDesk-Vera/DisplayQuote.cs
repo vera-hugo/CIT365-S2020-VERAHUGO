@@ -26,15 +26,15 @@ namespace MegaDesk_Vera
             label2.Text = AddQuote.userName;
             //int widthDesk = AddQuote.myDesk.getwidthDesk();
             label6.Text = Convert.ToString(myDeskQuote.getArea());
-            label12.Text = Convert.ToString(myDeskQuote.getBaseCost());
+            label12.Text = string.Format("{0:#,##0.00}",(myDeskQuote.getBaseCost()));
             label17.Text = Convert.ToString(myDeskQuote.getmyDesk().getsurfaceMaterial());
             label8.Text = Convert.ToString(myDeskQuote.getmyDesk().getdrawersDesk());
             label20.Text = Convert.ToString(myDeskQuote.getdayRush());
-            label15.Text = Convert.ToString(myDeskQuote.getextraAreaCost());
-            label18.Text = Convert.ToString(myDeskQuote.getsurfaceMaterialCost());
-            label24.Text = Convert.ToString(myDeskQuote.getdrawersCost());
-            label21.Text = Convert.ToString(myDeskQuote.getrushCost());
-            label23.Text = Convert.ToString(myDeskQuote.finalCost());
+            label15.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getextraAreaCost()));
+            label18.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getsurfaceMaterialCost()));
+            label24.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getdrawersCost()));
+            label21.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getrushCost()));
+            label23.Text = string.Format("{0:#,##0.00}", (myDeskQuote.finalCost()));
         }
 
         private void button1_Click(object sender, EventArgs e)

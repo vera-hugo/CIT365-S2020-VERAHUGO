@@ -94,7 +94,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(471, 326);
+            this.button1.Location = new System.Drawing.Point(486, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -156,8 +156,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 23);
             this.label12.TabIndex = 12;
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            //this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label13
             // 
@@ -186,6 +185,7 @@
             this.label15.Size = new System.Drawing.Size(100, 23);
             this.label15.TabIndex = 15;
             this.label15.Text = "label15";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label16
             // 
@@ -211,7 +211,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 23);
             this.label18.TabIndex = 18;
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label19
             // 
@@ -237,7 +237,7 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(100, 23);
             this.label21.TabIndex = 21;
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label22
             // 
@@ -256,7 +256,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(100, 23);
             this.label23.TabIndex = 23;
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
@@ -283,7 +283,7 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(100, 23);
             this.label24.TabIndex = 26;
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DisplayQuote
             // 
