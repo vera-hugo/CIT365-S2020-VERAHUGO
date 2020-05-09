@@ -1,26 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace MegaDesk_Vera
+
 {
-    public class Desk
+    public enum surfaceMaterial
+    {
+        Oak,
+        Laminate,
+        Pine,
+        Rosewood,
+        Veneer
+    }
+    public static class variablesConstraints
+    { 
+    public const int MINWIDTH = 24;
+    public const int MAXWIDTH = 96;
+    public const int MINDEPTH = 12;
+    public const int MAXDEPTH = 48;
+
+    }
+    public  class Desk
     {
         
         //bject with width, depth, number of drawers, and the surface material
         public  int widthDesk;
         public  int depthDesk;
         public  int drawersDesk;
-        public  string surfaceMaterial;
+        public  surfaceMaterial mySurfaceMaterial;
 
-        public  int MINWIDTH = 24;
-        public  int MAXWIDTH = 96;
-        public  int MINDEPTH = 12;
-        public  int MAXDEPTH = 48;
+        
 
         //public const int constanTest = 1000;
 
@@ -29,12 +47,12 @@ namespace MegaDesk_Vera
 
         }
 
-        public Desk(int widthDesk, int depthDesk, int drawersDesk, string surfaceMaterial) 
+        public Desk(int widthDesk, int depthDesk, int drawersDesk, surfaceMaterial surfaceMaterial) 
         {
             this.widthDesk = widthDesk;
             this.depthDesk = depthDesk;
             this.drawersDesk = drawersDesk;
-            this.surfaceMaterial = surfaceMaterial;
+            this.mySurfaceMaterial = surfaceMaterial;
         
         }
 
@@ -68,34 +86,34 @@ namespace MegaDesk_Vera
                 return this.drawersDesk;
         }
 
-        public void setsurfaceMaterial(string surfaceMaterial)
+        public void setsurfaceMaterial(surfaceMaterial surfaceMaterial)
         {
-            this.surfaceMaterial = surfaceMaterial;
+            this.mySurfaceMaterial = surfaceMaterial;
         }
 
-        public string getsurfaceMaterial()
+        public surfaceMaterial getsurfaceMaterial()
         {
-                return this.surfaceMaterial;
+                return this.mySurfaceMaterial;
         }
 
         public int getMINWIDTH()
         {
-            return this.MINWIDTH;
+            return variablesConstraints.MINWIDTH;
         }
 
         public int getMAXWIDTH()
         {
-            return this.MAXWIDTH;
+            return variablesConstraints.MAXWIDTH;
         }
 
         public int getMINDEPTH()
         {
-            return this.MINDEPTH;
+            return variablesConstraints.MINDEPTH;
         }
 
         public int getMAXDEPTH()
         {
-            return this.MAXDEPTH;
+            return variablesConstraints.MAXDEPTH;
         }
 
 

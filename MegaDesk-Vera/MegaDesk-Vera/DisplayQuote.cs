@@ -12,12 +12,12 @@ namespace MegaDesk_Vera
 {
     public partial class DisplayQuote : Form
     {
-        DeskQuote myDeskQuote = new DeskQuote(AddQuote.myDesk, AddQuote.dayRush, AddQuote.userName, DateTime.Now.ToString("d MMMM yyyy"));
+        DeskQuote myDeskQuote = new DeskQuote(AddQuote.myDesk, AddQuote.dayRush, AddQuote.userName, DateTime.Now);
 
         public DisplayQuote()
         {
             InitializeComponent();
-            label4.Text =  DateTime.Now.ToString("d MMMM yyyy");
+            label4.Text = Convert.ToString(myDeskQuote.getdate());
         }
 
 
@@ -25,9 +25,16 @@ namespace MegaDesk_Vera
         {
             label2.Text = AddQuote.userName;
             //int widthDesk = AddQuote.myDesk.getwidthDesk();
-            label6.Text = Convert.ToString(AddQuote.myDesk.getwidthDesk() * AddQuote.myDesk.getdepthDesk());
-
-
+            label6.Text = Convert.ToString(myDeskQuote.getArea());
+            label12.Text = Convert.ToString(myDeskQuote.getBaseCost());
+            label17.Text = Convert.ToString(myDeskQuote.getmyDesk().getsurfaceMaterial());
+            label8.Text = Convert.ToString(myDeskQuote.getmyDesk().getdrawersDesk());
+            label20.Text = Convert.ToString(myDeskQuote.getdayRush());
+            label15.Text = Convert.ToString(myDeskQuote.getextraAreaCost());
+            label18.Text = Convert.ToString(myDeskQuote.getsurfaceMaterialCost());
+            label24.Text = Convert.ToString(myDeskQuote.getdrawersCost());
+            label21.Text = Convert.ToString(myDeskQuote.getrushCost());
+            label23.Text = Convert.ToString(myDeskQuote.finalCost());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,5 +50,7 @@ namespace MegaDesk_Vera
             AddQuoteForm.Show();
             Hide();
         }
+
+     
     }   
 }

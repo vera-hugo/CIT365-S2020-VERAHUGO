@@ -137,11 +137,12 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Rosewood  -  $300.00",
-            "Oak\t  -  $200.00\t",
-            "Laminate    -  $100.00",
-            "Veneer         -  $125.00",
-            "Pine             -    $50.00"});
+            "Oak",
+            "Laminate",
+            "Pine",
+            "Rosewood",
+            "Veneer",
+            "       "});
             this.comboBox2.Location = new System.Drawing.Point(206, 170);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);

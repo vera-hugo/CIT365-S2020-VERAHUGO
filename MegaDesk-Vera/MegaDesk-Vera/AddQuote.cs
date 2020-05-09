@@ -33,13 +33,23 @@ namespace MegaDesk_Vera
             Hide();
         }
 
-        public bool checkWidth()
+        public bool checkWidth(object sender, CancelEventArgs e)
         {
-            int width = Convert.ToInt32(this.textBox2.Text);
+            int width = 0;
+            try
+            {
+                 width = Convert.ToInt32(this.textBox2.Text);
+            }
+            catch (Exception)
+            {
+                e.Cancel = true;
+                // inputWidth.Text = "";
+                MessageBox.Show("Please enter only numbers into the width field");
+            }
 
             //int test = myDesk.
 
-            if (width < myDesk.getMINWIDTH() || width > myDesk.getMAXWIDTH())
+            if (width < variablesConstraints.MINWIDTH || width > variablesConstraints.MAXWIDTH)
             {
                 return false;
             }
@@ -54,8 +64,9 @@ namespace MegaDesk_Vera
         {
             int width = Convert.ToInt32(this.textBox6.Text);
 
-            if (width < myDesk.getMINDEPTH() || width > myDesk.getMAXDEPTH())
+            if (width < variablesConstraints.MINDEPTH || width > variablesConstraints.MAXDEPTH)
             {
+                //variablesConstraints.MINDEPTH = 8;
                 return false;
             }
             else
@@ -69,7 +80,7 @@ namespace MegaDesk_Vera
         private void TextBox2_Validating(object sender, CancelEventArgs e)
         {
             
-            bool result = checkWidth();
+            bool result = checkWidth(sender, e);
             string errorMessage = "Width does not belong to the correct range (24-96)";
 
             if (!result)
@@ -112,11 +123,31 @@ namespace MegaDesk_Vera
         private void button1_Click_1(object sender, EventArgs e)
         {
             userName = textBox1.Text;
-            //dayRush = Convert.ToInt32(comboBox3.Text);
+            dayRush = Convert.ToInt32(comboBox3.Text);
             myDesk.setwidthDesk(Convert.ToInt32(textBox2.Text));
             myDesk.setdepthDesk(Convert.ToInt32(textBox6.Text));
             myDesk.setdrawersDesk(Convert.ToInt32(comboBox1.Text));
-            myDesk.setsurfaceMaterial((comboBox2.Text));
+
+            surfaceMaterial tempMaterial = surfaceMaterial.Veneer;
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    tempMaterial = surfaceMaterial.Oak;
+                break;
+                case 1:
+                    tempMaterial = surfaceMaterial.Laminate;
+                break;
+                case 2:
+                    tempMaterial = surfaceMaterial.Pine;
+                break;
+                case 3:
+                    tempMaterial = surfaceMaterial.Rosewood;
+                break;
+                case 4:
+                    tempMaterial = surfaceMaterial.Veneer;
+                break;
+            }
+            myDesk.setsurfaceMaterial(tempMaterial);
             Form DisplayQuoteForm = new DisplayQuote();
             DisplayQuoteForm.Show();
             Hide();
