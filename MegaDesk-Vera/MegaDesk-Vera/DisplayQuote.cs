@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace MegaDesk_Vera
         public DisplayQuote()
         {
             InitializeComponent();
-            label4.Text = Convert.ToString(myDeskQuote.getdate());
+            label4.Text = myDeskQuote.getdate().ToString("dd MMMM yyyy");
+
         }
 
 
@@ -25,16 +27,16 @@ namespace MegaDesk_Vera
         {
             label2.Text = AddQuote.userName;
             //int widthDesk = AddQuote.myDesk.getwidthDesk();
-            label6.Text = Convert.ToString(myDeskQuote.getArea());
-            label12.Text = string.Format("{0:#,##0.00}",(myDeskQuote.getBaseCost()));
+            label6.Text = Convert.ToString(myDeskQuote.getArea()) + " in²" ;
+            label12.Text = myDeskQuote.getBaseCost().ToString("C", CultureInfo.CurrentCulture);
             label17.Text = Convert.ToString(myDeskQuote.getmyDesk().getsurfaceMaterial());
             label8.Text = Convert.ToString(myDeskQuote.getmyDesk().getdrawersDesk());
             label20.Text = Convert.ToString(myDeskQuote.getdayRush());
-            label15.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getextraAreaCost()));
-            label18.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getsurfaceMaterialCost()));
-            label24.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getdrawersCost()));
-            label21.Text = string.Format("{0:#,##0.00}", (myDeskQuote.getrushCost()));
-            label23.Text = string.Format("{0:#,##0.00}", (myDeskQuote.finalCost()));
+            label15.Text = myDeskQuote.getextraAreaCost().ToString("C", CultureInfo.CurrentCulture);
+            label18.Text = myDeskQuote.getsurfaceMaterialCost().ToString("C", CultureInfo.CurrentCulture);
+            label24.Text = myDeskQuote.getdrawersCost().ToString("C", CultureInfo.CurrentCulture);
+            label21.Text = myDeskQuote.getrushCost().ToString("C", CultureInfo.CurrentCulture);
+            label23.Text = myDeskQuote.finalCost().ToString("C", CultureInfo.CurrentCulture);
         }
 
         private void button1_Click(object sender, EventArgs e)
