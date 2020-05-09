@@ -97,27 +97,27 @@ namespace MegaDesk_Vera
             switch (myDesk.getsurfaceMaterial()) 
                       
             {
-                case surfaceMaterial.Oak:
+                case DesktopMaterial.Oak:
 
                     cost = 200;
 
                     break;
-                case surfaceMaterial.Laminate:
+                case DesktopMaterial.Laminate:
 
                     cost = 100;
 
                     break;
-                case surfaceMaterial.Pine:
+                case DesktopMaterial.Pine:
 
                     cost = 50;
 
                     break;
-                case surfaceMaterial.Rosewood:
+                case DesktopMaterial.Rosewood:
 
                     cost = 300;
 
                     break;
-                case surfaceMaterial.Veneer:
+                case DesktopMaterial.Veneer:
 
                     cost = 125;
 

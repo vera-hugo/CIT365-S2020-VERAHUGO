@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace MegaDesk_Vera
 
 {
-    public enum surfaceMaterial
+    public enum DesktopMaterial
     {
         Oak,
         Laminate,
@@ -36,9 +36,9 @@ namespace MegaDesk_Vera
         public  int widthDesk;
         public  int depthDesk;
         public  int drawersDesk;
-        public  surfaceMaterial mySurfaceMaterial;
+        public DesktopMaterial myDesktopMaterial;
 
-        
+
 
         //public const int constanTest = 1000;
 
@@ -47,12 +47,12 @@ namespace MegaDesk_Vera
 
         }
 
-        public Desk(int widthDesk, int depthDesk, int drawersDesk, surfaceMaterial surfaceMaterial) 
+        public Desk(int widthDesk, int depthDesk, int drawersDesk, DesktopMaterial surfaceMaterial) 
         {
             this.widthDesk = widthDesk;
             this.depthDesk = depthDesk;
             this.drawersDesk = drawersDesk;
-            this.mySurfaceMaterial = surfaceMaterial;
+            this.myDesktopMaterial = surfaceMaterial;
         
         }
 
@@ -86,14 +86,14 @@ namespace MegaDesk_Vera
                 return this.drawersDesk;
         }
 
-        public void setsurfaceMaterial(surfaceMaterial surfaceMaterial)
+        public void setsurfaceMaterial(DesktopMaterial surfaceMaterial)
         {
-            this.mySurfaceMaterial = surfaceMaterial;
+            this.myDesktopMaterial = surfaceMaterial;
         }
 
-        public surfaceMaterial getsurfaceMaterial()
+        public DesktopMaterial getsurfaceMaterial()
         {
-                return this.mySurfaceMaterial;
+                return this.myDesktopMaterial;
         }
 
         public int getMINWIDTH()

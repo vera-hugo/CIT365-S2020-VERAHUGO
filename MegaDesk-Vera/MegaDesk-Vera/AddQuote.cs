@@ -109,7 +109,7 @@ namespace MegaDesk_Vera
         {
 
             bool result = checkDepth();
-            string errorMessage = "Width does not belong to the correct range (12-48)";
+            string errorMessage = "Depth does not belong to the correct range (12-48)";
 
             if (!result)
             {
@@ -128,23 +128,23 @@ namespace MegaDesk_Vera
             myDesk.setdepthDesk(Convert.ToInt32(textBox6.Text));
             myDesk.setdrawersDesk(Convert.ToInt32(comboBox1.Text));
 
-            surfaceMaterial tempMaterial = surfaceMaterial.Veneer;
+            DesktopMaterial tempMaterial = DesktopMaterial.Veneer;
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
-                    tempMaterial = surfaceMaterial.Oak;
+                    tempMaterial = DesktopMaterial.Oak;
                 break;
                 case 1:
-                    tempMaterial = surfaceMaterial.Laminate;
+                    tempMaterial = DesktopMaterial.Laminate;
                 break;
                 case 2:
-                    tempMaterial = surfaceMaterial.Pine;
+                    tempMaterial = DesktopMaterial.Pine;
                 break;
                 case 3:
-                    tempMaterial = surfaceMaterial.Rosewood;
+                    tempMaterial = DesktopMaterial.Rosewood;
                 break;
                 case 4:
-                    tempMaterial = surfaceMaterial.Veneer;
+                    tempMaterial = DesktopMaterial.Veneer;
                 break;
             }
             myDesk.setsurfaceMaterial(tempMaterial);
