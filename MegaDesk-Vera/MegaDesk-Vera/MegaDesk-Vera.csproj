@@ -52,7 +52,6 @@
     <Compile Include="AddQuote.Designer.cs">
       <DependentUpon>AddQuote.cs</DependentUpon>
     </Compile>
-    <Compile Include="BranchClass.cs" />
     <Compile Include="Desk.cs" />
     <Compile Include="DeskQuote.cs" />
     <Compile Include="DisplayQuote.cs">
