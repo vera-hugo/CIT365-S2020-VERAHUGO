@@ -207,8 +207,8 @@ namespace MegaDesk_Vera
         public int GetRushOrder()
 
         {
-            MessageBox.Show(Path.Combine(Directory.GetCurrentDirectory()), @"\\rushOrderPrices.txt");
-            string[] readText = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\rushOrderPrices.txt", Encoding.UTF8);
+            string[] readText = File.ReadAllLines(Directory.GetCurrentDirectory() +
+                @"\rushOrderPrices.txt", Encoding.UTF8);
 
             for (int index = 0; index < readText.Length; index++)
             {
