@@ -21,7 +21,7 @@ namespace MegaDesk_Vera
         private string customerName;
         private DateTime date;
 
-        public int[,] orderDays = new int[2, 2];
+        public int[,] orderDays = new int[3, 3];
 
 
         public DeskQuote() 
@@ -207,18 +207,14 @@ namespace MegaDesk_Vera
         public int GetRushOrder()
 
         {
-            string[] readText = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "\\rushOrderPrices.txt"), Encoding.UTF8);
-
-
+            MessageBox.Show(Path.Combine(Directory.GetCurrentDirectory()), @"\\rushOrderPrices.txt");
+            string[] readText = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\rushOrderPrices.txt", Encoding.UTF8);
 
             for (int index = 0; index < readText.Length; index++)
             {
-                MessageBox.Show("x "+ Convert.ToString(index % 3) + " y" + Convert.ToString(index / 3) + " " + index);
-
-                //this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
+                this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);
             }
 
-            //MessageBox.Show(Convert.ToString(orderDays[0,0]));
             return 0;     
             
         }
