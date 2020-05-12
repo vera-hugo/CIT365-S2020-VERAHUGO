@@ -204,18 +204,18 @@ namespace MegaDesk_Vera
             return getrushCost() + getdrawersCost() + getsurfaceMaterialCost() + getextraAreaCost() + getBaseCost();
         }
 
-        public int GetRushOrder() 
-                    
-        {                     
+        public int GetRushOrder()
+
+        {
             string[] readText = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "\\rushOrderPrices.txt"), Encoding.UTF8);
 
 
 
             for (int index = 0; index < readText.Length; index++)
             {
-                //MessageBox.Show("x "+ Convert.ToString(index % 3) + " y" + Convert.ToString(index / 3) + " " + index);
-                
-               this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
+                MessageBox.Show("x "+ Convert.ToString(index % 3) + " y" + Convert.ToString(index / 3) + " " + index);
+
+                //this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
             }
 
             //MessageBox.Show(Convert.ToString(orderDays[0,0]));
