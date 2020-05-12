@@ -48,5 +48,11 @@ namespace MegaDesk_Vera
             Close();
            
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            DeskQuote m = new DeskQuote();
+            m.GetRushOrder();
+        }
     }
 }

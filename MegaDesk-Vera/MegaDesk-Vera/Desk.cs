@@ -15,6 +15,7 @@ namespace MegaDesk_Vera
 {
     public enum DesktopMaterial
     {
+        Select,
         Oak,
         Laminate,
         Pine,

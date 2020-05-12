@@ -131,19 +131,19 @@ namespace MegaDesk_Vera
             DesktopMaterial tempMaterial = DesktopMaterial.Veneer;
             switch (comboBox2.SelectedIndex)
             {
-                case 0:
+                case 1:
                     tempMaterial = DesktopMaterial.Oak;
                 break;
-                case 1:
+                case 2:
                     tempMaterial = DesktopMaterial.Laminate;
                 break;
-                case 2:
+                case 3:
                     tempMaterial = DesktopMaterial.Pine;
                 break;
-                case 3:
+                case 4:
                     tempMaterial = DesktopMaterial.Rosewood;
                 break;
-                case 4:
+                case 5:
                     tempMaterial = DesktopMaterial.Veneer;
                 break;
             }
@@ -152,6 +152,7 @@ namespace MegaDesk_Vera
             DisplayQuoteForm.Show();
             Hide();
 
+            
         }
 
     }

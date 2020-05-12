@@ -3,23 +3,31 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Vera
 {
     class DeskQuote
     {
-        
-        private Desk myDesk = new Desk();
-        private const int baseCost = 200;       
 
-       
+        private Desk myDesk = new Desk();
+        private const int baseCost = 200;
+
+
         private int dayRush;
         private string customerName;
         private DateTime date;
 
+        public int[,] orderDays = new int[2, 2];
 
+
+        public DeskQuote() 
+        {
+        
+        }
 
         public DeskQuote(Desk myDesk, int dayRush, string customerName, DateTime date)
         {
@@ -195,6 +203,26 @@ namespace MegaDesk_Vera
 
             return getrushCost() + getdrawersCost() + getsurfaceMaterialCost() + getextraAreaCost() + getBaseCost();
         }
+
+        public int GetRushOrder() 
+                    
+        {                     
+            string[] readText = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "\\rushOrderPrices.txt"), Encoding.UTF8);
+
+
+
+            for (int index = 0; index < readText.Length; index++)
+            {
+                //MessageBox.Show("x "+ Convert.ToString(index % 3) + " y" + Convert.ToString(index / 3) + " " + index);
+                
+               this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
+            }
+
+            //MessageBox.Show(Convert.ToString(orderDays[0,0]));
+            return 0;     
+            
+        }
+
 
     }
 }
