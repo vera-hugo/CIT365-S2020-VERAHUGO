@@ -25,6 +25,7 @@ namespace MegaDesk_Vera
 
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
+            myDeskQuote.GetRushOrder();
             label2.Text = AddQuote.userName;
             //int widthDesk = AddQuote.myDesk.getwidthDesk();
             label6.Text = Convert.ToString(myDeskQuote.getArea()) + " in²" ;

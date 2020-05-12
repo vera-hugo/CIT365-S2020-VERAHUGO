@@ -17,6 +17,10 @@ namespace MegaDesk_Vera
             InitializeComponent();
         }
 
+        List<DesktopMaterial> materials = new List<DesktopMaterial>();
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             Form MainMenuForm = new MainMenu();
@@ -24,6 +28,13 @@ namespace MegaDesk_Vera
             Hide();
         }
 
-       
+        private void SearchQuotes_Load(object sender, EventArgs e)
+        {
+            foreach (DesktopMaterial item in Enum.GetValues(typeof(DesktopMaterial)))
+            {
+                materials.Add(item);
+            }
+            desktopMaterialComboBox.DataSource = materials;
+        }
     }
 }
