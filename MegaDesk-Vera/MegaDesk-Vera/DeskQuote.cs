@@ -226,11 +226,7 @@ namespace MegaDesk_Vera
                 
                this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
             }
-
-
-          
-            return 0;     
-            
+            return  0;            
         }
 
 
