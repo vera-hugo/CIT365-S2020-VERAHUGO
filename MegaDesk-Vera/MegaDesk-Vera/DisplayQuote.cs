@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Vera
 {
@@ -54,6 +56,18 @@ namespace MegaDesk_Vera
             Hide();
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var list = JsonConvert.DeserializeObject<List<jsonVariables>>(myJsonFile);
+            //            jsonVariables myJsonVariables = new jsonVariables(myDeskQuote);
+
+            //string myJsonFile = JsonConvert.DeserializeObject();
+            string myJsonFile = JsonConvert.SerializeObject(myJsonVariables, Formatting.Indented);
+            
+            string path = Directory.GetCurrentDirectory() + "\\quotes.json";
+            //MessageBox.Show(myJsonFile);
+
+            File.WriteAllText(path, myJsonFile);
+        }
     }   
 }

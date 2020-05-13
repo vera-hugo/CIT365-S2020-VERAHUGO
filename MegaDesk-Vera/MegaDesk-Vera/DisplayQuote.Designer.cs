@@ -336,6 +336,7 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "Submmit";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DisplayQuote
             // 

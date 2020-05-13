@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,12 +47,12 @@ namespace MegaDesk_Vera
         {
             //Close the Main Menu Form
             Close();
-           
+
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        /*private void MainMenu_Load(object sender, EventArgs e)
         {
-            int loco = 0;
-        }
+           // MessageBox.Show(Directory.GetCurrentDirectory() + "\\quotes.json");
+        }*/
     }
 }

@@ -7,14 +7,53 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Reflection;
 
 namespace MegaDesk_Vera
 {
+    class jsonVariables
+    {
+        public string CustomeName { get; set; }
+        public DateTime date { get; set; }
+
+        public int basePrice { get; set; }
+       
+        public int rushDay { get; set; }
+
+        public DesktopMaterial surfaceMaterial { get; set; }
+
+        public int numberOfDrawers { get; set; }
+        
+        public int width { get; set; }
+
+        public int depth { get; set; }
+
+        public int surfaceArea { get; set; }
+
+        public float totalCost { get; set; }
+
+
+
+        public jsonVariables(DeskQuote myDeskQuote) 
+        {
+            CustomeName = myDeskQuote.getcustomerName();
+            date = myDeskQuote.getdate();
+            basePrice = myDeskQuote.getBaseCost();
+            rushDay = myDeskQuote.getdayRush();
+            surfaceMaterial = myDeskQuote.getmyDesk().getsurfaceMaterial();
+            numberOfDrawers = myDeskQuote.getmyDesk().getdrawersDesk();
+            width = myDeskQuote.getmyDesk().getwidthDesk();
+            depth = myDeskQuote.getmyDesk().getdepthDesk();
+            surfaceArea = myDeskQuote.getArea();
+            totalCost = myDeskQuote.finalCost();
+        }
+    }
     class DeskQuote
     {
 
         private Desk myDesk = new Desk();
-        private const int baseCost = 200;
+        public const int baseCost = 200;
 
 
         private int dayRush;
@@ -207,7 +246,7 @@ namespace MegaDesk_Vera
         public int GetRushOrder() 
                     
         {
-            string[] readText;
+            string[] readText = new string[9];
             try
             {
                readText = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "\\rushOrderPrices.txt"), Encoding.UTF8);
@@ -221,8 +260,7 @@ namespace MegaDesk_Vera
             }
 
             for (int index = 0; index < readText.Length; index++)
-            {
-                
+            {               
                 
                this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
             }
