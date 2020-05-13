@@ -38,7 +38,7 @@ namespace MegaDesk_Vera
             int width = 0;
             try
             {
-                 width = Convert.ToInt32(this.textBox2.Text);
+                width = Convert.ToInt32(this.textBox2.Text);
             }
             catch (Exception)
             {
@@ -46,7 +46,6 @@ namespace MegaDesk_Vera
                 // inputWidth.Text = "";
                 MessageBox.Show("Please enter only numbers into the width field");
             }
-
             //int test = myDesk.
 
             if (width < variablesConstraints.MINWIDTH || width > variablesConstraints.MAXWIDTH)

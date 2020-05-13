@@ -51,8 +51,7 @@ namespace MegaDesk_Vera
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            DeskQuote m = new DeskQuote();
-            m.GetRushOrder();
+            int loco = 0;
         }
     }
 }
