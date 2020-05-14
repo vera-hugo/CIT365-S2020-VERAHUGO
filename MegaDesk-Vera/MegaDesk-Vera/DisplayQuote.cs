@@ -58,24 +58,19 @@ namespace MegaDesk_Vera
 
         private void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
-            var list = JsonConvert.DeserializeObject<List<jsonVariables>>(myJsonFile);
-            //            jsonVariables myJsonVariables = new jsonVariables(myDeskQuote);
-=======
-            string path = Directory.GetCurrentDirectory() + "\\quotes.json";
-            string jsonFileContent = File.ReadAllText(path);
-            MessageBox.Show(jsonFileContent);
-            //var list = JsonConvert.DeserializeObject<List<jsonVariables>>(myJsonFile);
-            //jsonVariables myJsonVariables = new jsonVariables(myDeskQuote);
->>>>>>> Stashed changes
+            // Read from json file
+            string json = File.ReadAllText(@"E:\GitHub\CIT365-S2020-VERAHUGO\MegaDesk-Vera\MegaDesk-Vera\bin\quotes.json");
+            // Create List and pupulate it with info from json string
+            List<jsonVariables> listFromFile = new List<jsonVariables>();
+            listFromFile = JsonConvert.DeserializeObject<List<jsonVariables>>(json);
+            // Create new record
+            jsonVariables jsonLine = new jsonVariables(myDeskQuote);
+            // Add to list
+            listFromFile.Add(jsonLine);
+            // Return List to json file
+            File.WriteAllText(@"E:\GitHub\CIT365-S2020-VERAHUGO\MegaDesk-Vera\MegaDesk-Vera\bin\quotes.json",
+                JsonConvert.SerializeObject(listFromFile, Formatting.Indented));
 
-            //string myJsonFile = JsonConvert.DeserializeObject();
-            string myJsonFile = JsonConvert.SerializeObject(myJsonVariables, Formatting.Indented);
-            
-            //string path = Directory.GetCurrentDirectory() + "\\quotes.json";
-            //MessageBox.Show(myJsonFile);
-
-            //File.WriteAllText(path, myJsonFile);
         }
     }   
 }
