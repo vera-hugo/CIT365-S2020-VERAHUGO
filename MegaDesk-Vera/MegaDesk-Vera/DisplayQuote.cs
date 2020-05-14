@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,15 +59,25 @@ namespace MegaDesk_Vera
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var list = JsonConvert.DeserializeObject<List<jsonVariables>>(myJsonFile);
-            //            jsonVariables myJsonVariables = new jsonVariables(myDeskQuote);
+            string json = File.ReadAllText("\\quotes.json");
+            List<jsonVariables> list = new List<jsonVariables>();
+            jsonVariables a = new jsonVariables(myDeskQuote);
+            list.Add(a);
+            list = JsonConvert.DeserializeObject<List<jsonVariables>>(json);
+
+            Desk desk = new Desk(5, 5, 5, DesktopMaterial.Veneer);
+            DeskQuote deskQuote = new DeskQuote(desk, 1, "Hello there", DateTime.Now);
+            jsonVariables myJsonVariables = new jsonVariables(deskQuote);
+
+            MessageBox.Show(myJsonVariables.CustomeName);
+
+            list.Add(myJsonVariables);
 
             //string myJsonFile = JsonConvert.DeserializeObject();
-            string myJsonFile = JsonConvert.SerializeObject(myJsonVariables, Formatting.Indented);
+            string myJsonFile = JsonConvert.SerializeObject(list, Formatting.Indented);
             
             string path = Directory.GetCurrentDirectory() + "\\quotes.json";
             //MessageBox.Show(myJsonFile);
-
             File.WriteAllText(path, myJsonFile);
         }
     }   
