@@ -58,16 +58,24 @@ namespace MegaDesk_Vera
 
         private void button2_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             var list = JsonConvert.DeserializeObject<List<jsonVariables>>(myJsonFile);
             //            jsonVariables myJsonVariables = new jsonVariables(myDeskQuote);
+=======
+            string path = Directory.GetCurrentDirectory() + "\\quotes.json";
+            string jsonFileContent = File.ReadAllText(path);
+            MessageBox.Show(jsonFileContent);
+            //var list = JsonConvert.DeserializeObject<List<jsonVariables>>(myJsonFile);
+            //jsonVariables myJsonVariables = new jsonVariables(myDeskQuote);
+>>>>>>> Stashed changes
 
             //string myJsonFile = JsonConvert.DeserializeObject();
             string myJsonFile = JsonConvert.SerializeObject(myJsonVariables, Formatting.Indented);
             
-            string path = Directory.GetCurrentDirectory() + "\\quotes.json";
+            //string path = Directory.GetCurrentDirectory() + "\\quotes.json";
             //MessageBox.Show(myJsonFile);
 
-            File.WriteAllText(path, myJsonFile);
+            //File.WriteAllText(path, myJsonFile);
         }
     }   
 }
