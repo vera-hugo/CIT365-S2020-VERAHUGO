@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,26 +58,19 @@ namespace MegaDesk_Vera
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string json = File.ReadAllText("\\quotes.json");
-            List<jsonVariables> list = new List<jsonVariables>();
-            jsonVariables a = new jsonVariables(myDeskQuote);
-            list.Add(a);
-            list = JsonConvert.DeserializeObject<List<jsonVariables>>(json);
+            // Read from json file
+            string json = File.ReadAllText(@"E:\GitHub\CIT365-S2020-VERAHUGO\MegaDesk-Vera\MegaDesk-Vera\bin\quotes.json");
+            // Create List and pupulate it with info from json string
+            List<jsonVariables> listFromFile = new List<jsonVariables>();
+            listFromFile = JsonConvert.DeserializeObject<List<jsonVariables>>(json);
+            // Create new record
+            jsonVariables jsonLine = new jsonVariables(myDeskQuote);
+            // Add to list
+            listFromFile.Add(jsonLine);
+            // Return List to json file
+            File.WriteAllText(@"E:\GitHub\CIT365-S2020-VERAHUGO\MegaDesk-Vera\MegaDesk-Vera\bin\quotes.json",
+                JsonConvert.SerializeObject(listFromFile, Formatting.Indented));
 
-            Desk desk = new Desk(5, 5, 5, DesktopMaterial.Veneer);
-            DeskQuote deskQuote = new DeskQuote(desk, 1, "Hello there", DateTime.Now);
-            jsonVariables myJsonVariables = new jsonVariables(deskQuote);
-
-            MessageBox.Show(myJsonVariables.CustomeName);
-
-            list.Add(myJsonVariables);
-
-            //string myJsonFile = JsonConvert.DeserializeObject();
-            string myJsonFile = JsonConvert.SerializeObject(list, Formatting.Indented);
-            
-            string path = Directory.GetCurrentDirectory() + "\\quotes.json";
-            //MessageBox.Show(myJsonFile);
-            File.WriteAllText(path, myJsonFile);
         }
     }   
 }

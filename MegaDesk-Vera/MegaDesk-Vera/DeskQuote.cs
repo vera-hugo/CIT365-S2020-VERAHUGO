@@ -33,10 +33,7 @@ namespace MegaDesk_Vera
 
         public float totalCost { get; set; }
 
-        public jsonVariables() 
-        {
-        
-        }
+        public jsonVariables() { }
 
         public jsonVariables(DeskQuote myDeskQuote) 
         {

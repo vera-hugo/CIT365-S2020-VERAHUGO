@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Vera
 {
@@ -50,9 +52,9 @@ namespace MegaDesk_Vera
 
         }
 
-        /*private void MainMenu_Load(object sender, EventArgs e)
+        private void MainMenu_Load(object sender, EventArgs e)
         {
-           // MessageBox.Show(Directory.GetCurrentDirectory() + "\\quotes.json");
-        }*/
+            
+        }
     }
 }
