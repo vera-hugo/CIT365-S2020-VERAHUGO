@@ -48,13 +48,15 @@ namespace MegaDesk_Vera
         private void exitButtom_Click(object sender, EventArgs e)
         {
             //Close the Main Menu Form
-            Close();
+            Application.Exit();
 
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-            
-        }
+
+        //private void MainMenu_Load(object sender, EventArgs e)
+        //{
+
+
+        //}
     }
 }

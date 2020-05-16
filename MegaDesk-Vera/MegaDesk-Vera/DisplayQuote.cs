@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
+
 namespace MegaDesk_Vera
 {
     public partial class DisplayQuote : Form
@@ -59,17 +60,22 @@ namespace MegaDesk_Vera
         private void button2_Click(object sender, EventArgs e)
         {
             // Read from json file
-            string json = File.ReadAllText(@"E:\GitHub\CIT365-S2020-VERAHUGO\MegaDesk-Vera\MegaDesk-Vera\bin\quotes.json");
+            var path = Path.Combine(Directory.GetCurrentDirectory()) + "\\quotes.json";
+
+            string json = File.ReadAllText(path);
             // Create List and pupulate it with info from json string
+            //MessageBox.Show(path);
             List<jsonVariables> listFromFile = new List<jsonVariables>();
-            listFromFile = JsonConvert.DeserializeObject<List<jsonVariables>>(json);
+            if (json != "")
+                listFromFile = JsonConvert.DeserializeObject<List<jsonVariables>>(json);
             // Create new record
             jsonVariables jsonLine = new jsonVariables(myDeskQuote);
             // Add to list
             listFromFile.Add(jsonLine);
             // Return List to json file
-            File.WriteAllText(@"E:\GitHub\CIT365-S2020-VERAHUGO\MegaDesk-Vera\MegaDesk-Vera\bin\quotes.json",
-                JsonConvert.SerializeObject(listFromFile, Formatting.Indented));
+
+            string route = JsonConvert.SerializeObject(listFromFile, Formatting.Indented);
+            File.WriteAllText(path, route);
 
         }
     }   

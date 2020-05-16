@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 
 
+
 namespace MegaDesk_Vera
 
 {
     public enum DesktopMaterial
     {
-        Select,
+        
         Oak,
         Laminate,
         Pine,
@@ -96,6 +97,12 @@ namespace MegaDesk_Vera
         {
                 return this.myDesktopMaterial;
         }
+
+//        public string getIndexMaterial()
+//        {
+//            return Enum.GetName(typeof(DesktopMaterial), this.myDesktopMaterial);
+//;
+//        }
 
         public int getMINWIDTH()
         {

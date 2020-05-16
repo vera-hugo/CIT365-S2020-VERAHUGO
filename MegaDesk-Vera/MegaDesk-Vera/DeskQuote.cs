@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Reflection;
+using System.Globalization;
+using System.Threading;
 
 namespace MegaDesk_Vera
 {
@@ -21,7 +23,7 @@ namespace MegaDesk_Vera
        
         public int rushDay { get; set; }
 
-        public DesktopMaterial surfaceMaterial { get; set; }
+        public string surfaceMaterial { get; set; }
 
         public int numberOfDrawers { get; set; }
         
@@ -41,7 +43,7 @@ namespace MegaDesk_Vera
             date = myDeskQuote.getdate();
             basePrice = myDeskQuote.getBaseCost();
             rushDay = myDeskQuote.getdayRush();
-            surfaceMaterial = myDeskQuote.getmyDesk().getsurfaceMaterial();
+            surfaceMaterial = Convert.ToString(myDeskQuote.getmyDesk().getsurfaceMaterial());
             numberOfDrawers = myDeskQuote.getmyDesk().getdrawersDesk();
             width = myDeskQuote.getmyDesk().getwidthDesk();
             depth = myDeskQuote.getmyDesk().getdepthDesk();
@@ -185,6 +187,8 @@ namespace MegaDesk_Vera
         public int getrushCost() 
         {
             int cost = 0;
+            GetRushOrder();
+            
 
             switch (getdayRush())
 
@@ -193,36 +197,36 @@ namespace MegaDesk_Vera
 
                     if (getArea() < 1000)
 
-                        cost = 60;
+                        cost = orderDays[0,0];
 
                     else if (getArea() < 2001)
-                        cost = 70;
+                        cost = orderDays[1,0];
 
-                    else cost = 80;
+                    else cost = orderDays[2,0];
 
                  break;
                 case 5:
 
                     if (getArea() < 1000)
 
-                        cost = 40;
+                        cost = orderDays[0,1];
 
                     else if (getArea() < 2001)
-                        cost = 50;
+                        cost = orderDays[1, 1];
 
-                    else cost = 60;
+                    else cost = orderDays[2, 1];
 
                  break;
                 case 7:
 
                     if (getArea() < 1000)
 
-                        cost = 30;
+                        cost = orderDays[0, 2];
 
                     else if (getArea() < 2001)
-                        cost = 35;
+                        cost = orderDays[1, 2];
 
-                    else cost = 40;
+                    else cost = orderDays[2, 2];
 
                 break;
                 case 14:
@@ -243,14 +247,14 @@ namespace MegaDesk_Vera
             return getrushCost() + getdrawersCost() + getsurfaceMaterialCost() + getextraAreaCost() + getBaseCost();
         }
 
-        public int GetRushOrder() 
+        public void GetRushOrder() 
                     
         {
             string[] readText = new string[9];
             try
             {
-               readText = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "\\rushOrderPrices.txt"), Encoding.UTF8);
-
+               readText = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\rushOrderPrices.txt");
+            
             }
 
             catch (IOException e)
@@ -262,9 +266,11 @@ namespace MegaDesk_Vera
             for (int index = 0; index < readText.Length; index++)
             {               
                 
-               this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);               
+               this.orderDays[index % 3, index / 3] = Convert.ToInt32(readText[index]);
+                //MessageBox.Show("" + Convert.ToInt32(readText[index]));
+                //MessageBox.Show("" + this.orderDays[index % 3, index / 3]);
             }
-            return  0;            
+                        
         }
 
 
