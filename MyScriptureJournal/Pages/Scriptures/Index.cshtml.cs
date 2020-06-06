@@ -33,16 +33,16 @@ namespace MyScriptureJournal.Pages.Scriptures
         
 
         
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortBookAndDate)
         {
             //order
-            BookSort = String.IsNullOrEmpty(sortOrder) ? "book_desc" : "";
-            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            BookSort = String.IsNullOrEmpty(sortBookAndDate) ? "book_desc" : "";
+            DateSort = sortBookAndDate == "Date" ? "date_desc" : "Date";
 
             var scriptures = from m in _context.Scripture
                          select m;
 
-            switch (sortOrder)
+            switch (sortBookAndDate)
             {
                 case "book_desc":
                     scriptures = scriptures.OrderByDescending(s => s.BookName);
