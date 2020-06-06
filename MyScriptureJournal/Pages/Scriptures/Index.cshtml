@@ -1,4 +1,4 @@
-﻿@page
+﻿@page  "{searchString?}"
 @model MyScriptureJournal.Pages.Scriptures.IndexModel
 
 @{
@@ -10,14 +10,33 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        @*<select asp-for="BookLists" asp-items="Model.Books">
+            <option value="">All</option>
+        </select>*@
+        Book Name: <input type="text" asp-for="SearchString" />
+        @*<input type="submit" value="Filter" />*@
+        Keyword: <input type="text" asp-for="SearchString1" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
+                @*--@Html.DisplayNameFor(model => model.Scripture[0].BookName)*@
+                <a asp-page="./Index" asp-route-sortOrder="@Model.BookSort">
                 @Html.DisplayNameFor(model => model.Scripture[0].BookName)
+                </a>
             </th>
             <th>
+                @*@Html.DisplayNameFor(model => model.Scripture[0].DateAdded)*@
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
                 @Html.DisplayNameFor(model => model.Scripture[0].DateAdded)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Scripture[0].Chapter)
