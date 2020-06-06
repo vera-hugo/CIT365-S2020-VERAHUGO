@@ -19,6 +19,7 @@ namespace MyScriptureJournal.Pages.Scriptures
             _context = context;
         }
 
+        //Order initiation
         public string BookSort { get; set; }
         public string DateSort { get; set; }
 
