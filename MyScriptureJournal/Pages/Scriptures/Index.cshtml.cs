@@ -19,29 +19,40 @@ namespace MyScriptureJournal.Pages.Scriptures
             _context = context;
         }
 
-        //Order initiation
+        
+        public IList<Scripture> Scripture { get;set; }
+
         public string BookSort { get; set; }
         public string DateSort { get; set; }
-
-        public IList<Scripture> Scripture { get;set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchString1 { get; set; }
-        
 
-        
+
         public async Task OnGetAsync(string sortBookAndDate)
         {
             //order
             BookSort = String.IsNullOrEmpty(sortBookAndDate) ? "book_desc" : "";
             DateSort = sortBookAndDate == "Date" ? "date_desc" : "Date";
 
+            
             var scriptures = from m in _context.Scripture
-                         select m;
+                             select m;
 
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                scriptures = scriptures.Where(s => s.BookName.Contains(SearchString));
+
+            }
+
+            if (!string.IsNullOrEmpty(SearchString1))
+            {
+                scriptures = scriptures.Where(s => s.Note.Contains(SearchString1));
+
+            }
             switch (sortBookAndDate)
             {
                 case "book_desc":
@@ -56,17 +67,8 @@ namespace MyScriptureJournal.Pages.Scriptures
                 default:
                     scriptures = scriptures.OrderBy(s => s.BookName);
                     break;
-            }
-
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                scriptures = scriptures.Where(s => s.BookName.Contains(SearchString));
-            }
-
-            if (!string.IsNullOrEmpty(SearchString1))
-            {
-                scriptures = scriptures.Where(s => s.Note.Contains(SearchString1));
-            }
+            }           
+           
 
             Scripture = await scriptures.ToListAsync();
 
