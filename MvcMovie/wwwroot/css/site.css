@@ -12,6 +12,12 @@ a {
   color: #0366d6;
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #00adb5;
+    color: #ffffff;
+}
+
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
