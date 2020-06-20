@@ -1,10 +1,11 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
@@ -74,4 +75,58 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("https://religionnews.com/wp-content/uploads/2019/01/thumbRNS-Temple-Changes1-010319.jpg");
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Indie Flower', cursive;
+    font-size:larger;
+}
+
+#button1 {
+    background-color: chartreuse;
+    border: 1px solid #000000;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    padding: 6px;
+}
+
+#button2 {
+    background-color: chartreuse;
+    border: 1px solid #000000;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    padding: 6px;
+}
+
+#button3 {
+    background-color: firebrick;
+    border: 1px solid #000000;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    padding: 6px;
+}
+
+#navigation:hover {
+    background-color: coral;
+    color: #ffffff;
+}
+
+#button1:hover {
+    background-color: coral;
+    color: #ffffff;
+}
+
+#button2:hover {
+    background-color: coral;
+    color: #ffffff;
+}
+
+#button3:hover {
+    background-color: coral;
+    color: #ffffff;
 }

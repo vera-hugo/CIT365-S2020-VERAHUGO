@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Movies of the Church of Jesus Christ of Latter Day Saints</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -60,9 +60,15 @@
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <button id="button1" class="button_button1">
+                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/image/tab_edit.png">Edit</a> |
+                </button>
+                <button id="button2" class="button button2">
+                    <a asp-action="Details" asp-route-id="@item.Id"><img src="~/image/application_view_detail.png">Details</a> |
+                </button>>
+                <button id="button3" class="button button3">
+                    <a style="color:black" asp-route-id="@item.Id"><img src="~/image/cancel.png">Delete</a>
+                </button>
             </td>
         </tr>
         }
