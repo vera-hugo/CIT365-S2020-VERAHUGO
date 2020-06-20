@@ -61,13 +61,13 @@
             </td>
             <td>
                 <button id="button1" class="button_button1">
-                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/image/tab_edit.png">Edit</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id"><img src="~/image/tab_edit.png">Edit</a>
                 </button>
                 <button id="button2" class="button button2">
-                    <a asp-action="Details" asp-route-id="@item.Id"><img src="~/image/application_view_detail.png">Details</a> |
-                </button>>
+                    <a asp-action="Details" asp-route-id="@item.Id"><img src="~/image/application_view_detail.png">Details</a>
+                </button>
                 <button id="button3" class="button button3">
-                    <a style="color:black" asp-route-id="@item.Id"><img src="~/image/cancel.png">Delete</a>
+                    <a style="color:black" asp-action="Delete" asp-route-id="@item.Id"><img src="~/image/cancel.png">Delete</a>
                 </button>
             </td>
         </tr>

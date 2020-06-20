@@ -1,6 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&display=swap');
 
 a.navbar-brand {
     white-space: normal;
@@ -83,8 +85,8 @@ body {
     background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("https://religionnews.com/wp-content/uploads/2019/01/thumbRNS-Temple-Changes1-010319.jpg");
     background-size: cover;
     background-position: center center;
-    font-family: 'Indie Flower', cursive;
-    font-size:larger;
+    font-family: 'MuseoModerno', cursive;
+    font-size: medium;
 }
 
 #button1 {
@@ -111,10 +113,6 @@ body {
     padding: 6px;
 }
 
-#navigation:hover {
-    background-color: coral;
-    color: #ffffff;
-}
 
 #button1:hover {
     background-color: coral;
