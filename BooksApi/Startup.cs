@@ -37,6 +37,7 @@ namespace BooksApi
             services.AddSingleton<BookService>();
 
 
+
             services.AddMvc()
             .AddJsonOptions(options => options.UseMemberCasing())
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
